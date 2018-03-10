@@ -2,6 +2,7 @@ Class SceneDefine
   def initialized
     @count = -1
     @next_scene = nil
+    @is_finished = false
   end
 
   def count_down
@@ -17,7 +18,12 @@ Class SceneDefine
     Scene.set_current_scene(@next_scene)
   end
 
+  def finish
+    @is_finished = true
+  end
+
   def play
     move_next_scene if count_down
+    return if @is_finished
   end
 end
