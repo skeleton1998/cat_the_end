@@ -1,14 +1,13 @@
-Class Scene
-  @@scene = nil
+class Scene
+  @@current_scene = nil
 
-  Class << self
-    def set_scene(scene:)
-      @@scene = scene
+  class << self
+    def set_current_scene(scene: nil)
+      @@current_scene = scene
     end
 
     def play
-      @@scene.play if @@scene
+      @@current_scene.play if @@current_scene
     end
   end
 end
-

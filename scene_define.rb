@@ -1,7 +1,7 @@
-Class SceneDefine
+class SceneDefine
   SEC_TO_FRAME = 60
 
-  def initialized
+  def initialize
     @count = -1
     @next_scene = nil
     @is_finished = false
@@ -9,20 +9,20 @@ Class SceneDefine
 
   def count_down
     @count -= 1 if @count > 0
-    return @count == 0
+    return @count <= 0 && @count > -1
   end
 
   def move_next_scene
-    unless next_scene then
+    unless @next_scene then
       STDERR.print "from #{self.class}, next_scene is nil"
       exit
     end
-    Scene.set_current_scene(@next_scene)
+    Scene.set_current_scene(scene: @next_scene)
   end
 
   def finish(time: 0)
     @is_finished = true
-    @current = time * SEC_TO_FRAME
+    @count = time * SEC_TO_FRAME
   end
 
   def play
