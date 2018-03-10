@@ -29,7 +29,7 @@ module Title
       else
         return
       end
-      finish
+      finish(time: 3)
     end
 
     def play

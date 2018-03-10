@@ -1,4 +1,6 @@
 Class SceneDefine
+  SEC_TO_FRAME = 60
+
   def initialized
     @count = -1
     @next_scene = nil
@@ -18,8 +20,9 @@ Class SceneDefine
     Scene.set_current_scene(@next_scene)
   end
 
-  def finish
+  def finish(time: 0)
     @is_finished = true
+    @current = time * SEC_TO_FRAME
   end
 
   def play
