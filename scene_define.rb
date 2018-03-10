@@ -14,7 +14,7 @@ class SceneDefine
 
   def move_next_scene
     unless @next_scene then
-      STDERR.print "from #{self.class}, next_scene is nil"
+      STDERR.print "from #{self.type}, next_scene is nil"
       exit
     end
     Scene.set_current_scene(scene: @next_scene)
