@@ -1,5 +1,5 @@
 module CatGame 
-  module Stage1
+  module Stage2
     CAR_LINES = [{x: 100, y: 0},{x: 400, y: 0},{x: 500, y: 0}]
     CAR_LINE_WIDTH = 100
     CAR_LINE_HEIGHT = Window.height + 200
