@@ -13,7 +13,7 @@ require_relative 'ending/director'
 Scene.set_current_scene(scene: Title::Director.new)
 
 Window.loop do
-  exit if Input.key_push?(K_ESCAPE)
+  Scene.set_current_scene(scene: Title::Director.new) if Input.key_push?(K_ESCAPE)
 
   Scene.play
 end
